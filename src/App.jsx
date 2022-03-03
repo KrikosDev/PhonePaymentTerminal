@@ -12,18 +12,29 @@ const MainBox = styled.div`
 `;
 
 function App() {
-  const [prefix, setPrefix] = useState('');
 
   return (
     <MainBox>
       <Routes>
         <Route
           path={`/`}
-          element={<MainPage prefix={prefix} setPrefix={setPrefix} />}
+          element={<MainPage/>}
         />
         <Route
-          path={`/payment`}
-          element={<Payment prefix={prefix} setPrefix={setPrefix} />}
+          path={`/payment/MTS`}
+          element={<Payment prefix={'MTS'}/>}
+        />
+        <Route
+          path={`/payment/TELE2`}
+          element={<Payment prefix={'TELE2'}/>}
+        />
+        <Route
+          path={`/payment/MEGAPHONE`}
+          element={<Payment prefix={'MEGAPHONE'}/>}
+        />
+        <Route
+          path={`/payment/BEELINE`}
+          element={<Payment prefix={'BEELINE'}/>}
         />
       </Routes>
     </MainBox>

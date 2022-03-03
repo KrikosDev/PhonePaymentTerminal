@@ -54,19 +54,19 @@ const ColumnBox = styled.div`
   flex-direction: column;
   margin: 20px;
 
-  #mts {
+  .mts {
     background-color: rgb(227, 39, 17);
   }
 
-  #megaphone {
+  .megaphone {
     background-color: rgb(3, 153, 97);
   }
 
-  #tele2 {
+  .tele2 {
     background-color: rgb(25, 103, 209);
   }
 
-  #beeline {
+  .beeline {
     background-color: rgb(239, 190, 53);
   }
 `;
@@ -84,45 +84,42 @@ const RulesBox = styled.div`
 const ColorBox = styled.div`
   display: flex;
 
-  #blue {
+  .blue {
     color: rgb(25, 103, 209);
   }
 
-  #yellow {
+  .yellow {
     color: rgb(239, 190, 53);
   }
 
-  #green {
+  .green {
     color: rgb(3, 153, 97);
   }
 
-  #red {
+  .red {
     color: rgb(227, 39, 17);
   }
 `;
 
-function MainPage({ prefix, setPrefix }) {
-  const prefixChange = (operator) => {
-    setPrefix(operator);
-  };
+function MainPage() {
 
   return (
     <MainBox>
       <h1>
         <ColorBox>
-          <div id='blue'>O</div>
-          <div id='yellow'>n</div>
-          <div id='green'>l</div>
-          <div id='blue'>i</div>
-          <div id='yellow'>n</div>
-          <div id='red'>e</div>
-          <div id='blue'>P</div>
-          <div id='green'>a</div>
-          <div id='red'>y</div>
-          <div id='blue'>m</div>
-          <div id='red'>e</div>
-          <div id='yellow'>n</div>
-          <div id='green'>t</div>
+          <div className='blue'>O</div>
+          <div className='yellow'>n</div>
+          <div className='green'>l</div>
+          <div className='blue'>i</div>
+          <div className='yellow'>n</div>
+          <div className='red'>e</div>
+          <div className='blue'>P</div>
+          <div className='green'>a</div>
+          <div className='red'>y</div>
+          <div className='blue'>m</div>
+          <div className='red'>e</div>
+          <div className='yellow'>n</div>
+          <div className='green'>t</div>
         </ColorBox>
       </h1>
       <ParagraphBox>
@@ -135,44 +132,32 @@ function MainPage({ prefix, setPrefix }) {
       <h3>Please select your mobile operator</h3>
       <ButtonBox>
         <ColumnBox>
-          <Link to='/payment'>
+          <Link to='/payment/MTS'>
             <button
-              onClick={() => {
-                prefixChange('MTS');
-              }}
-              id='mts'
+              className='mts'
             >
               МТС
             </button>
           </Link>
-          <Link to='/payment'>
+          <Link to='/payment/MEGAPHONE'>
             <button
-              onClick={() => {
-                prefixChange('MEGAPHONE');
-              }}
-              id='megaphone'
+              className='megaphone'
             >
               Мегафон
             </button>
           </Link>
         </ColumnBox>
         <ColumnBox>
-          <Link to='/payment'>
+          <Link to='/payment/TELE2'>
             <button
-              onClick={() => {
-                prefixChange('TELE2');
-              }}
-              id='tele2'
+              className='tele2'
             >
               ТЕЛЕ2
             </button>
           </Link>
-          <Link to='/payment'>
+          <Link to='/payment/BEELINE'>
             <button
-              onClick={() => {
-                prefixChange('BEELINE');
-              }}
-              id='beeline'
+              className='beeline'
             >
               Билайн
             </button>

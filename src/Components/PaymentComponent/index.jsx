@@ -15,23 +15,23 @@ const MainBox = styled.div`
     margin-top: 0;
   }
 
-  #TELE2 {
+  .TELE2 {
     color: rgb(25, 103, 209);
   }
 
-  #BEELINE {
+  .BEELINE {
     color: rgb(239, 190, 53);
   }
 
-  #MEGAPHONE {
+  .MEGAPHONE {
     color: rgb(3, 153, 97);
   }
 
-  #MTS {
+  .MTS {
     color: rgb(227, 39, 17);
   }
 
-  #phoneNumber {
+  .phoneNumber {
   }
 
   input {
@@ -130,8 +130,8 @@ function Payment({ prefix }) {
 
   return (
     <MainBox>
-      <h1 id={prefix}>{prefix}</h1>
-      <p id={prefix}>Enter your phone number</p>
+      <h1 className={prefix}>{prefix}</h1>
+      <p className={prefix}>Enter your phone number</p>
       <InputMask
         placeholder='+7'
         mask='+7 999 999 99 99'
@@ -140,7 +140,7 @@ function Payment({ prefix }) {
           setNumber(e.target.value);
         }}
       ></InputMask>
-      <p id={prefix}>Enter the replenishment amount</p>
+      <p className={prefix}>Enter the replenishment amount</p>
       <input
         value={sum}
         minLength={1}
@@ -150,7 +150,7 @@ function Payment({ prefix }) {
         }}
       ></input>
       <button
-        id={prefix}
+        className={prefix}
         onClick={() => {
           startPay();
         }}
